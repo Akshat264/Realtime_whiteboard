@@ -8,13 +8,14 @@ const joinroomform=({uuid,socket,setUser})=>{
         e.preventDefault();
         const roomData={
             name,
-            roomid,
+            roomId: roomid,
             userId: uuid(),
             host: false,
             presenter: false,
         }
         setUser(roomData);
         navigate(`${roomid}`);
+        console.log(roomData);
         socket.emit("userJoined",roomData);
     }
     return ( <form className="form col-md-12 mt-5">
