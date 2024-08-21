@@ -5,7 +5,7 @@ import Roompage from './pages/Roompage';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import {toast, ToastContainer} from "react-toastify";
-const server="http://localhost:3000";
+const server="https://realtime-whiteboard-1-tf9l.onrender.com/";
 const connectionOptions={
   "force neww connction" : true,
   reconnectionAttempts: "Infinity",
