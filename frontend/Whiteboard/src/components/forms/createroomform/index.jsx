@@ -19,6 +19,15 @@ const createroomform=({uuid,socket,setUser})=>{
         console.log(roomData);
         socket.emit("userJoined",roomData);
     }
+    const copyToClipboard = () => {
+        const textarea = document.createElement("textarea");
+        textarea.value = roomId;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("RoomId copied to clipboard!");
+      };
 return (
     <form className="form col-md-12 mt-5">
         <div className="form-group">
@@ -29,7 +38,7 @@ return (
                 <input type="text" value={roomId}className="form-control my-2 border-0" disabled placeholder="Generate room id"/>
                 <div className="input-group-append d-flex gap-1">
                     <button className="btn btn-primary btn-sm me-1" onClick={()=>setRoomid(uuid())} type="button">Generate</button>
-                    <button className="btn btn-outline-danger btn-sm" type="button">Copy</button>
+                    <button className="btn btn-outline-danger btn-sm" type="button" onClick={copyToClipboard}>Copy</button>
                 </div>
               </div>
               </div>
