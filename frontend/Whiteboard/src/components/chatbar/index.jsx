@@ -18,7 +18,7 @@ const Chat=({setOpenedChatTab,socket,chat, setChat})=>{
     }
     return <div className="position-fixed top-0 h-100 text-white bg-dark" style={{width: "400px", left: "0%"}}>
     <button type="button" className="btn btn-light btn-block w-100 mt-5" onClick={()=>setOpenedChatTab(false)}>Close</button>
-    <div className="w-100 mt-5 p-2 border border-1 border-white rounded-3" style={{height: "65%"}}>
+    <div className="w-100 mt-5 p-2 border border-1 border-white rounded-3" style={{height: "65%", overflowY: "scroll"}}>
         {
             chat.map((msg,index)=>(
                 <p key={index*999} className="my-2 text-center w-100">{msg.name}: {msg.message}</p>
